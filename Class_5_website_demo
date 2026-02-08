@@ -1,209 +1,135 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Briefcase, TrendingUp, Users, MapPin } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMU Cox Executive MBA</title>
 
-export default function SMUCoxEMBA() {
-  return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-red-800 to-black opacity-95" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-16 items-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="space-y-8"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Lead What’s Next.
-              <span className="block text-red-300">SMU Cox Executive MBA</span>
-            </h1>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-            <p className="text-lg text-red-100 max-w-xl">
-              A transformational MBA built for experienced professionals with real responsibilities, real teams, and real ambitions. Learn alongside peers who understand your world, form lifelong relationships, and gain tools you can apply at work the very next Monday — without stepping away from your career.
-            </p>
+  <style>
+    body { font-family: Inter, sans-serif; }
+  </style>
+</head>
 
-            <div className="flex gap-4">
-              <Button className="rounded-2xl px-8 py-6 text-lg bg-white text-red-800 hover:bg-red-100">
-                Request Information
-              </Button>
-              <Button variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-white hover:bg-white/10">
-                Download Brochure
-              </Button>
-            </div>
+<body class="bg-white text-gray-900">
 
-            <div className="flex gap-8 text-sm text-red-200">
-              <span>20 Months</span>
-              <span>• Weekend Format</span>
-              <span>• Dallas</span>
-            </div>
-          </motion.div>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-red-700 via-red-800 to-black opacity-95"></div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <div className="rounded-3xl bg-white/10 backdrop-blur-xl p-10 shadow-2xl">
-              <h3 className="text-xl font-semibold mb-6">Why Cox?</h3>
-              <ul className="space-y-4 text-red-100">
-                <li>✓ Top-tier faculty and executive coaching</li>
-                <li>✓ Tight‑knit cohort of experienced leaders</li>
-                <li>✓ Global immersions and real-world strategy labs</li>
-                <li>✓ Immediate ROI for you and your organization</li>
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    <div class="relative max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-16 items-center text-white">
+      <div class="space-y-8">
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+          Lead What’s Next.
+          <span class="block text-red-300">SMU Cox Executive MBA</span>
+        </h1>
 
-      {/* PROGRAM VIDEO */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="rounded-3xl overflow-hidden shadow-2xl"
-        >
-          <video
-            className="w-full h-auto"
-            src="/video.mp4"
-            controls
-            preload="metadata"
-          />
-        </motion.div>
-      </section>
+        <p class="text-lg text-red-100 max-w-xl">
+          A transformational MBA built for experienced professionals with real responsibilities, real teams, and real ambitions. Learn alongside peers who understand your world and apply insights immediately at work.
+        </p>
 
-      {/* VALUE PROPS */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold">Designed for Executives Who Deliver Results</h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Built around real-world leadership challenges, the program integrates
-            strategy, finance, innovation, and personal effectiveness into one
-            cohesive experience.
-          </p>
+        <div class="flex gap-4">
+          <button class="rounded-2xl px-8 py-4 bg-white text-red-800 font-semibold">Request Information</button>
+          <button class="rounded-2xl px-8 py-4 border border-white text-white">Download Brochure</button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { icon: TrendingUp, title: "Strategic Leadership", text: "Elevate decision-making with advanced analytics and executive strategy." },
-            { icon: Briefcase, title: "Career Acceleration", text: "Position yourself for C‑suite and enterprise leadership roles." },
-            { icon: Users, title: "Elite Network", text: "Learn alongside high-performing peers across industries." },
-            { icon: GraduationCap, title: "Applied Learning", text: "Immediately apply insights to your organization." },
-          ].map((item, i) => (
-            <motion.div key={i} whileHover={{ y: -6 }}>
-              <Card className="rounded-2xl shadow-lg h-full">
-                <CardContent className="p-8 space-y-4">
-                  <item.icon className="w-8 h-8 text-red-700" />
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-gray-600">{item.text}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div class="flex gap-8 text-sm text-red-200">
+          <span>20 Months</span>
+          <span>• Weekend Format</span>
+          <span>• Dallas</span>
         </div>
-      </section>
+      </div>
 
-      {/* PROGRAM HIGHLIGHTS */}
-      <section className="bg-gray-50 py-24 px-6">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold">Program Highlights</h2>
-            <ul className="space-y-3 text-gray-700">
-              <li>• Weekend executive-friendly schedule</li>
-              <li>• Personalized executive coaching</li>
-              <li>• International study tours</li>
-              <li>• Capstone consulting project</li>
-              <li>• Access to Cox alumni and Dallas business leaders</li>
-            </ul>
-          </div>
-
-          <Card className="rounded-3xl shadow-xl">
-            <CardContent className="p-10 space-y-6">
-              <div className="flex items-center gap-3">
-                <MapPin className="text-red-700" />
-                <span className="font-semibold">Dallas, Texas</span>
-              </div>
-              <p className="text-gray-600">
-                Study in one of the nation’s most dynamic business hubs with direct
-                access to Fortune 500 companies, thriving startups, and global
-                employers.
-              </p>
-              <Button className="rounded-2xl w-full bg-red-700 hover:bg-red-800 text-white py-6 text-lg">
-                Schedule a Consultation
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* STUDENT STORIES */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold">Meet the Leaders in the Room</h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Our cohorts are made up of experienced operators, founders, and executives. Here’s what they say about the Cox EMBA experience.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              quote:
-                "I didn’t just gain frameworks — I gained a trusted circle of peers I call before every big decision. The relationships are invaluable.",
-              name: "Maria Chen",
-              title: "VP, Healthcare Operations"
-            },
-            {
-              quote:
-                "Every class connected directly to challenges I was facing at work. I’d apply something on Monday and see results by Friday.",
-              name: "David Ramirez",
-              title: "Senior Director, Technology Strategy"
-            },
-            {
-              quote:
-                "Cox gave me the confidence and credibility to step into a C‑suite role. The coaching and exposure changed how I lead people.",
-              name: "Angela Brooks",
-              title: "Chief Financial Officer"
-            }
-          ].map((t, i) => (
-            <motion.div key={i} whileHover={{ y: -6 }}>
-              <Card className="rounded-2xl shadow-lg h-full">
-                <CardContent className="p-8 flex flex-col justify-between h-full">
-                  <p className="text-lg italic text-gray-800 leading-relaxed">“{t.quote}”</p>
-                  <div className="mt-6">
-                    <p className="font-semibold text-red-700">{t.name}</p>
-                    <p className="text-sm text-gray-500">{t.title}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-red-800 text-white py-20 text-center">
-        <h2 className="text-4xl font-bold mb-6">Ready to Lead at a Higher Level?</h2>
-        <div className="flex justify-center gap-4">
-          <Button className="rounded-2xl px-8 py-6 text-lg bg-white text-red-800 hover:bg-red-100">
-            Apply Now
-          </Button>
-          <Button variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-white hover:bg-white/10">
-            Speak with Admissions
-          </Button>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} SMU Cox School of Business | Executive MBA
-      </footer>
+      <div class="rounded-3xl bg-white/10 backdrop-blur-xl p-10 shadow-2xl">
+        <h3 class="text-xl font-semibold mb-6">Why Cox?</h3>
+        <ul class="space-y-3 text-red-100">
+          <li>✓ Top-tier faculty and executive coaching</li>
+          <li>✓ Tight-knit cohort of experienced leaders</li>
+          <li>✓ Global immersions and real-world strategy labs</li>
+          <li>✓ Immediate ROI for you and your organization</li>
+        </ul>
+      </div>
     </div>
-  );
-}
+  </section>
+
+  <!-- VIDEO -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <div class="rounded-3xl overflow-hidden shadow-2xl">
+      <video class="w-full" src="video.mp4" controls></video>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold">Designed for Executives Who Deliver Results</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Built around real-world leadership challenges integrating strategy, finance, innovation, and leadership.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-8 shadow-lg rounded-2xl">
+        <h3 class="font-semibold text-xl mb-2">Strategic Leadership</h3>
+        <p class="text-gray-600">Elevate decision-making with advanced analytics.</p>
+      </div>
+      <div class="p-8 shadow-lg rounded-2xl">
+        <h3 class="font-semibold text-xl mb-2">Career Acceleration</h3>
+        <p class="text-gray-600">Position yourself for C-suite roles.</p>
+      </div>
+      <div class="p-8 shadow-lg rounded-2xl">
+        <h3 class="font-semibold text-xl mb-2">Elite Network</h3>
+        <p class="text-gray-600">Learn alongside high-performing peers.</p>
+      </div>
+      <div class="p-8 shadow-lg rounded-2xl">
+        <h3 class="font-semibold text-xl mb-2">Applied Learning</h3>
+        <p class="text-gray-600">Immediately apply insights at work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT STORIES -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="text-4xl font-bold">Meet the Leaders in the Room</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <p class="italic">“I gained a trusted circle of peers I call before every big decision.”</p>
+        <p class="mt-4 font-semibold text-red-700">Maria Chen</p>
+        <p class="text-sm text-gray-500">VP, Healthcare Operations</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <p class="italic">“I’d apply something Monday and see results by Friday.”</p>
+        <p class="mt-4 font-semibold text-red-700">David Ramirez</p>
+        <p class="text-sm text-gray-500">Senior Director, Technology Strategy</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <p class="italic">“The coaching changed how I lead people.”</p>
+        <p class="mt-4 font-semibold text-red-700">Angela Brooks</p>
+        <p class="text-sm text-gray-500">Chief Financial Officer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-red-800 text-white py-20 text-center">
+    <h2 class="text-4xl font-bold mb-6">Ready to Lead at a Higher Level?</h2>
+    <button class="bg-white text-red-800 px-8 py-4 rounded-xl font-semibold">Apply Now</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 text-center text-sm text-gray-500">
+    © 2026 SMU Cox School of Business | Executive MBA
+  </footer>
+
+</body>
+</html>
